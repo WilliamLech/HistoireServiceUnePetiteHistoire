@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: histoire
+  datasource:
+    url: jdbc:postgresql://localhost:5433/histoire
+    username: histoire
+    password: histoire
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate   # recommandé avec Flyway/Liquibase
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: false
+    open-in-view: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+server:
+  port: 8081
